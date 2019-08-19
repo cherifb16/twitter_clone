@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<strong>All Tweets</strong>
+
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th colspan="3">Actions</th>
+    </tr>
+    <hr>
+  </thead>
+
+  <tbody>
+    <% @tweeets.each do |tweeet| %>
+      <tr>
+        <td><%= tweeet.content %></td>
+        <td><%= link_to 'Show', tweeet %></td>
+        <td><%= link_to 'Edit', edit_tweeet_path(tweeet),data: { confirm: 'Are you sure?' }%></td>
+        <td><%= link_to 'Destroy', tweeet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tweet', new_tweeet_path %>

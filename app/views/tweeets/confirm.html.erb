@@ -1,0 +1,16 @@
+<h1>CONFIRMATION</h1>
+
+<%= form_with(model: @tweeet,url:tweeets_path,local: true)do |form|%>
+<%= form.hidden_field :content%>
+
+
+
+<p>Body:<%= @tweeet.content %></p>
+  <%= form.submit  "submit" %>
+<% end %>
+
+<%= form_with(model: @tweeet, url: new_tweeet_path, method: 'get') do |form| %>
+  <%= form.hidden_field :content %>
+<%= link_to 'Back', tweeets_path %>
+
+<% end %>
